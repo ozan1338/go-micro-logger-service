@@ -54,6 +54,7 @@ func main() {
 	// register rpc server
 	err = rpc.Register(new(RPCServer))
 	go app.rpcListen()
+	go app.grpcListen()
 
 	//start web server
 	log.Printf("Starting authentication service at port %s", webPort)
